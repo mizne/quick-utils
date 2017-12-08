@@ -1,3 +1,3 @@
-import awesome from './core/awesome'
+import { parseURLSearch } from './core/url'
 
-export { awesome }
+export { parseURLSearch }

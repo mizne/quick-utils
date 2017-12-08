@@ -1,2 +1,2 @@
-import awesome from './core/awesome';
-export { awesome };
+import { parseURLSearch } from './core/url';
+export { parseURLSearch };
