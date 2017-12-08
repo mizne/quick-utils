@@ -9,7 +9,7 @@ function parseURLSearch(search: string): { [key: string]: string | string[] } {
     return {}
   }
   const str = search[0] === '?' ? search.slice(1) : search
-  const arr = str.split('&')
+  const arr = str.split('&').filter(e => e)
   
   return arr.reduce<{ [key: string]: string | string[] }>((accu, curr) => {
     const [key, val] = curr.split('=')
