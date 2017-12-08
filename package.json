@@ -1,0 +1,49 @@
+{
+  "name": "quick-utils",
+  "version": "0.0.1",
+  "description": "quick-utils",
+  "main": "dist/quick-utils.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mizne/quick-utils"
+  },
+  "keywords": [
+    "quick-utils"
+  ],
+  "author": {
+    "name": "mizne",
+    "email": "w20054319@126.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizne/quick-utils/issues"
+  },
+  "homepage": "https://github.com/mizne/quick-utils#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
+    "ts-loader": "^3.1.1",
+    "typescript": "^2.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "webpack": "^3.8.1",
+    "@types/jest": "^21.1.8",
+    "jest": "^21.2.1",
+    "ts-jest": "^21.2.3"
+  }
+}
