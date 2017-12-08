@@ -1,6 +1,6 @@
 {
   "name": "quick-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "quick-utils",
   "main": "dist/quick-utils.js",
   "typings": "dist/index.d.ts",
