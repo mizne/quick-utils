@@ -30,9 +30,17 @@ describe('test whetherInBetween function', () => {
       mockDate(0, 0)
       expect(whetherInBetween('00:00', '11:11')).toBe(false)
     })
+    test('00:00 not in between 12:12 and 00:00', () => {
+      mockDate(0, 0)
+      expect(whetherInBetween('12:12', '00:00')).toBe(false)
+    })
     test('11:11 not in between 00:00 and 11:11', () => {
       mockDate(11, 11)
       expect(whetherInBetween('00:00', '11:11')).toBe(false)
+    })
+    test('12:12 not in between 12:12 and 00:00', () => {
+      mockDate(12, 12)
+      expect(whetherInBetween('12:12', '00:00')).toBe(false)
     })
   })
 
@@ -41,9 +49,9 @@ describe('test whetherInBetween function', () => {
       mockDate(11, 11)
       expect(whetherInBetween('08:00', '21:21')).toBe(true)
     })
-    test('12:12 in between 7:00 and 21:21', () => {
-      mockDate(12, 12)
-      expect(whetherInBetween('7:00', '21:21')).toBe(true)
+    test('13:13 not in between 17:00 and 21:21', () => {
+      mockDate(13, 13)
+      expect(whetherInBetween('17:00', '21:21')).toBe(false)
     })
   })
 
@@ -52,9 +60,9 @@ describe('test whetherInBetween function', () => {
       mockDate(11, 11)
       expect(whetherInBetween('23:59', '00:00')).toBe(true)
     })
-    test('12:12 in between 17:00 and 09:21', () => {
+    test('12:12 not in between 17:00 and 13:21', () => {
       mockDate(12, 12)
-      expect(whetherInBetween('17:00', '09:21')).toBe(true)
+      expect(whetherInBetween('17:00', '13:21')).toBe(false)
     })
   })
 })
