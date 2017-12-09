@@ -1,3 +1,4 @@
 import { parseURLSearch } from './core/url'
+import { whetherInBetween } from './core/date-time'
 
-export { parseURLSearch }
+export { parseURLSearch, whetherInBetween }
