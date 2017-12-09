@@ -10,19 +10,22 @@ function parseURLSearch(search: string): { [key: string]: string | string[] } {
   }
   const str = search[0] === '?' ? search.slice(1) : search
   const arr = str.split('&').filter(e => e)
-  
+
   return arr.reduce<{ [key: string]: string | string[] }>((accu, curr) => {
     const [key, val] = curr.split('=')
     const oldV = accu[key]
+    if (typeof oldV === 'undefined') {
+      accu[key] = val
+      return accu
+    } 
     if (typeof oldV === 'string') {
       accu[key] = [oldV, val]
-    } else if (Array.isArray(oldV)) {
+      return accu
+    } 
+    if (Array.isArray(oldV)) {
       accu[key] = [...oldV, val]
-    } else {
-      accu[key] = val
+      return accu
     }
-
-    return accu
   }, {})
 }
 

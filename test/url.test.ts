@@ -26,5 +26,8 @@ describe('test parseURLSearch function', () => {
     test('parse "?a=2&a=3" return {"a": ["2", "3"]}', () => {
       expect(parseURLSearch('?a=2&a=3')).toEqual({ a: ['2', '3'] })
     })
+    test('parse "?a=2&a=3&a=4&b=5" return {"a": ["2", "3", "4"], "b": "5"}', () => {
+      expect(parseURLSearch('?a=2&a=3&a=4&b=5')).toEqual({ a: ['2', '3', '4'], b: '5' })
+    })
   })
 })

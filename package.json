@@ -5,7 +5,7 @@
   "main": "dist/quick-utils.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage && opn coverage/index.html",
     "build": "webpack"
   },
   "jest": {
@@ -18,6 +18,10 @@
       "tsx",
       "js",
       "json"
+    ],
+    "coverageReporters": [
+      "text-summary",
+      "html"
     ]
   },
   "repository": {
@@ -37,13 +41,14 @@
   },
   "homepage": "https://github.com/mizne/quick-utils#readme",
   "devDependencies": {
+    "@types/jest": "^21.1.8",
     "clean-webpack-plugin": "^0.1.17",
+    "jest": "^21.2.1",
+    "opn-cli": "^3.1.0",
+    "ts-jest": "^21.2.3",
     "ts-loader": "^3.1.1",
     "typescript": "^2.6.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
-    "webpack": "^3.8.1",
-    "@types/jest": "^21.1.8",
-    "jest": "^21.2.1",
-    "ts-jest": "^21.2.3"
+    "webpack": "^3.8.1"
   }
 }
